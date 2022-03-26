@@ -1,7 +1,71 @@
-import '../styles/globals.css'
+import { ApolloProvider } from '@apollo/client';
+import { client } from '../lib/apollo';
+import { useState, useEffect } from "react";
+import  {useDarkMode} from '../components/useDarkMode'
+import Link from 'next/link';
+import Toggle from '../components/Toggler';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import '../styles/globals.css';
+
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  const [theme, themeToggler] = useDarkMode();
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  return (
+    <ApolloProvider client={client}>
+        <Link href="#skip-target">
+        <a id="skip" className="sr-only focus:not-sr-only">
+          Skip to content
+        </a>
+      </Link>
+        <header className="bg-gradient-to-r from-lt-perfume via-lt-blue-light to-lt-perfume
+          dark:from-dk-purple-header dark:via-dk-blue-header dark:to-dk-purple-header
+        ">
+          <Toggle theme={theme} toggleTheme={themeToggler} />
+          <Header />
+        </header>
+        <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              (function() {
+                window.__onThemeChange = function() {};
+                function setTheme(newTheme) {
+                  window.__theme = newTheme;
+                  preferredTheme = newTheme;
+                  document.body.className = newTheme;
+                  window.__onThemeChange(newTheme);
+                }
+                var preferredTheme;
+                try {
+                  preferredTheme = localStorage.getItem('theme');
+                } catch (err) { }
+                window.__setPreferredTheme = function(newTheme) {
+                  setTheme(newTheme);
+                  try {
+                    localStorage.setItem('theme', newTheme);
+                  } catch (err) {}
+                }
+                var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+                darkQuery.addListener(function(e) {
+                  window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+                });
+                setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+              })();
+            `,
+            }}
+          />
+        {isMounted && <Component {...pageProps} />}
+        <Footer />
+    </ApolloProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
