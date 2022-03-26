@@ -21,8 +21,8 @@ export default function BlogPage({ post }) {
         <meta property="og:site_name" content="Blog - Sanna Mäkinen" />
         <meta property="og:image" content={post.mainImage} />
       </Head>
-      <div>
-        <div className="blog-main-image-wrapper">
+      <div className="grid-cols-[1fr 280px]">
+        <div className="grid-cols-1 md:grid-cols-2">
           <Image
             src={post.mainImage}
             alt=""
@@ -31,29 +31,28 @@ export default function BlogPage({ post }) {
             layout="intrinsic"
           />
         </div>
-        <div className="text-lt-gray dark:text-dk-gray">
+        <div className="text-lt-gray dark:text-dk-gray py-2 px-4-px lg:py-6 lg:px-8">
           <h1 id="skip-target" className="text-3xl lg:text-4xl">{ post.title }</h1>
           <span className="text-base">
             {dayjs(post.date).format(`MMMM DD, YYYY`)}{' '}
             | {post.category}
           </span>
-          <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
-          <div dangerouslySetInnerHTML={{ __html: post.imageCredits }}></div>
+          <div dangerouslySetInnerHTML={{ __html: post.content }} className="text-xl"></div>
+          <div dangerouslySetInnerHTML={{ __html: post.imageCredits }} className="text-base"></div>
         </div>
-        <aside>
-          <article className="info-box">
-            <div className="info-content">
-              <div className="writer-image-wrapper">
+        <aside className="w-[280px]">
+          <article>
+            <div className="p-[12px] lg:p-8 text-center text-lg">
+              <div className="mb-6 -mt-28">
                 <Image
                   src={post.authorImage}
                   alt=""
                   width={150}
                   height={150}
                   layout="fixed"
-                  className="writer-image"
                 />
               </div>
-              <span className="name">{ post.authorName }</span>
+              <span className="font-title text-xl">{ post.authorName }</span>
               <div dangerouslySetInnerHTML={{ __html: post.authorContent }} className="text-lg"></div>
             </div>
           </article>

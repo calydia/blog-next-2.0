@@ -6,7 +6,7 @@ const Header = () => {
   return (
       <div className="text-center py-8">
         <Link className="home-main" href="/" passHref>
-          <a className="inline-block p-[24px] border-y-4 border-transparent
+          <a className="inline-block p-6-px border-y-4 border-transparent
             hover:decoration-2 hover:underline-offset-4 hover:border-y-4 hover:border-lt-purple dark:hover:border-dk-blue-light
             focus:outline focus:outline-2 lg:focus:outline-offset-4	focus:outline-black dark:focus:outline-white">
             <span className="block text-3xl font-title text-black dark:text-white dark:text-shadow-text">Sanna Mäkinen</span>

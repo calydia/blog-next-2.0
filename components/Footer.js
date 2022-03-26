@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <footer className="mt-12 p-[16px] lg:p-[48px] bg-lt-blue-light dark:bg-dk-purple">
-      <div className="md:flex md:justify-between">
+    <footer className="mt-12 p-4-px lg:p-12-px bg-lt-blue-light dark:bg-dk-purple">
+      <div className="md:flex md:justify-between max-w-[1500px] mx-auto">
         <a
           href="https://sanna.ninja"
           className="flex align-center font-bold p-2 m-1 border-y-4 border-transparent text-lt-blue-dark lg:text-xl text-lt-blue-darkest dark:text-dk-blue-light

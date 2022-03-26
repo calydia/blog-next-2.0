@@ -23,10 +23,10 @@ export default function Home({ page, newest, listing }) {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
       </Head>
-        <h1 id="skip-target" className="block px-[16px] font-bold text-center my-8 lg:my-16 text-4xl md:text-6xl text-lt-gray dark:text-white">
+        <h1 id="skip-target" className="block px-4-px font-bold text-center my-8 lg:my-16 text-4xl md:text-6xl text-lt-gray dark:text-white">
           { page.title }
         </h1>
-        <div className="mx-[16px] max-w-7xl xl:my-0 xl:mx-auto">
+        <div className="mx-4-px max-w-7xl xl:my-0 xl:mx-auto">
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 md:gap-8 lg:gap-12" role="list">
           {newest.items.map((node, index) => {
                 return (

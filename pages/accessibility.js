@@ -23,10 +23,10 @@ export default function BlogPage({ page, newest, listing }) {
           <meta property="og:image:height" content="630" />
         </Head>
         <div>
-          <h1 id="skip-target" className="block px-[16px] font-bold text-center mt-8 lg:mt-16 mb-4 lg:mb-8 text-4xl md:text-6xl text-lt-gray dark:text-white">{ page.title }</h1>
+          <h1 id="skip-target" className="block px-4-px font-bold text-center mt-8 lg:mt-16 mb-4 lg:mb-8 text-4xl md:text-6xl text-lt-gray dark:text-white">{ page.title }</h1>
           <div dangerouslySetInnerHTML={{ __html: page.content }} className="text-xl text-center mb-6 lg:mb-12 text-lt-gray dark:text-white"></div>
         </div>
-        <div className="mx-[16px] max-w-7xl xl:my-0 xl:mx-auto">
+        <div className="mx-4-px max-w-7xl xl:my-0 xl:mx-auto">
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 md:gap-8 lg:gap-12" role="list">
             {newest.items.map((node, index) => {
                   return (
