@@ -31,9 +31,9 @@ export default function BlogPage({ post }) {
             layout="intrinsic"
           />
         </div>
-        <div>
-          <h1 id="skip-target">{ post.title }</h1>
-          <span className="blog-info">
+        <div className="text-lt-gray dark:text-dk-gray">
+          <h1 id="skip-target" className="text-3xl lg:text-4xl">{ post.title }</h1>
+          <span className="text-base">
             {dayjs(post.date).format(`MMMM DD, YYYY`)}{' '}
             | {post.category}
           </span>
@@ -54,7 +54,7 @@ export default function BlogPage({ post }) {
                 />
               </div>
               <span className="name">{ post.authorName }</span>
-              <div dangerouslySetInnerHTML={{ __html: post.authorContent }}></div>
+              <div dangerouslySetInnerHTML={{ __html: post.authorContent }} className="text-lg"></div>
             </div>
           </article>
         </aside>

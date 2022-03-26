@@ -23,8 +23,8 @@ export default function BlogPage({ page, newest, listing }) {
           <meta property="og:image:height" content="630" />
         </Head>
         <div>
-          <h1 id="skip-target" className="block px-[16px] font-bold text-center mt-16 mb-8 text-4xl md:text-6xl text-lt-gray dark:text-white">{ page.title }</h1>
-          <div dangerouslySetInnerHTML={{ __html: page.content }} className="text-xl text-center mb-12 text-lt-gray dark:text-white"></div>
+          <h1 id="skip-target" className="block px-[16px] font-bold text-center mt-8 lg:mt-16 mb-4 lg:mb-8 text-4xl md:text-6xl text-lt-gray dark:text-white">{ page.title }</h1>
+          <div dangerouslySetInnerHTML={{ __html: page.content }} className="text-xl text-center mb-6 lg:mb-12 text-lt-gray dark:text-white"></div>
         </div>
         <div className="mx-[16px] max-w-7xl xl:my-0 xl:mx-auto">
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 md:gap-8 lg:gap-12" role="list">
@@ -43,12 +43,12 @@ export default function BlogPage({ page, newest, listing }) {
                           objectFit="cover"
                         />
                         <div className="self-center text-center">
-                          <h2 id={`first-blog-title${index}`} className="text-lg font-bold md:text-3xl lg:text-4xl py-4 px-2
-                          after:bg-black after:h-0.5 after:block after:w-10 after:mt-2 after:mb-0 after:mx-auto after:content-['']
+                          <span id={`first-blog-title${index}`} className="post-title block text-lg font-bold md:text-3xl lg:text-4xl py-4 px-2
+                          after:bg-black after:h-0.5 after:block after:w-10 after:mt-4 after:mb-0 after:mx-auto after:content-['']
                           dark:after:bg-white
                           ">
                             {node.title}
-                          </h2>
+                          </span>
                           <span className="sr-only">on</span>
                           <span className="block text-base md:text-xl lg:text-2xl pb-4">
                           {dayjs(node.date)
@@ -67,7 +67,7 @@ export default function BlogPage({ page, newest, listing }) {
                     <li key={`list-item${index}`} className="grid items-stretch p-2 border-solid border-4 gradient-border-light bg-lt-blue-light text-lt-gray
                     dark:gradient-border-dark dark:bg-dk-purple dark:text-white
                     ">
-                      <a key={index} href={node.slug} className="post-link  focus:outline focus:outline-4 focus:outline-offset-15	focus:outline-black dark:focus:outline-white">
+                      <a key={index} href={node.slug} className="post-link focus:outline focus:outline-4 focus:outline-offset-15	focus:outline-black dark:focus:outline-white">
                         <Image
                           src={node.listingImage}
                           alt=""
@@ -76,11 +76,11 @@ export default function BlogPage({ page, newest, listing }) {
                           layout="responsive"
                         />
                         <div className="self-center text-center">
-                          <h2 id={`blog-title${index}`} className="text-lg font-bold md:text-2xl py-4 px-2
-                          after:bg-black after:h-0.5 after:block after:w-10 after:mt-2 after:mb-0 after:mx-auto after:content-['']
+                          <span id={`blog-title${index}`} className="post-title block text-lg font-bold md:text-2xl py-4 px-2
+                          after:bg-black after:h-0.5 after:block after:w-10 after:mt-4 after:mb-0 after:mx-auto after:content-['']
                           dark:after:bg-white">
                             {node.title}
-                          </h2>
+                          </span>
                           <span className="sr-only">on</span>
                           <span className="block text-base md:text-xl pb-4">
                             {dayjs(node.date)

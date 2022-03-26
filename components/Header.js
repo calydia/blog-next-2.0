@@ -8,13 +8,13 @@ const Header = () => {
         <Link className="home-main" href="/" passHref>
           <a className="inline-block p-[24px] border-y-4 border-transparent
             hover:decoration-2 hover:underline-offset-4 hover:border-y-4 hover:border-lt-purple dark:hover:border-dk-blue-light
-            focus:outline focus:outline-2 focus:outline-offset-4	focus:outline-black dark:focus:outline-white">
+            focus:outline focus:outline-2 lg:focus:outline-offset-4	focus:outline-black dark:focus:outline-white">
             <span className="block text-3xl font-title text-black dark:text-white dark:text-shadow-text">Sanna Mäkinen</span>
             <span className="block text-lg mt-2 font-title leading-none text-black dark:text-white dark:text-shadow-text">Blog</span>
           </a>
         </Link>
         <nav aria-label="Main">
-          <ul className="flex flex-wrap justify-center mt-8 p-0 mb-0">
+          <ul className="flex flex-wrap justify-center lg:mt-8 p-0 mb-0">
             <li className="m-3.5">
               <ActiveLink activeClassName="underline decoration-2 underline-offset-4 text-lt-purple dark:text-dk-blue-light" href="/cats">
                 <a className="text-xl p-1 text-black dark:text-white dark:text-shadow-text

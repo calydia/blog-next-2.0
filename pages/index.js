@@ -23,7 +23,7 @@ export default function Home({ page, newest, listing }) {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
       </Head>
-        <h1 id="skip-target" className="block px-[16px] font-bold text-center my-16 text-4xl md:text-6xl text-lt-gray dark:text-white">
+        <h1 id="skip-target" className="block px-[16px] font-bold text-center my-8 lg:my-16 text-4xl md:text-6xl text-lt-gray dark:text-white">
           { page.title }
         </h1>
         <div className="mx-[16px] max-w-7xl xl:my-0 xl:mx-auto">
@@ -43,12 +43,12 @@ export default function Home({ page, newest, listing }) {
                         objectFit="cover"
                       />
                       <div className="self-center text-center">
-                        <h2 id={`first-blog-title${index}`} className="text-lg font-bold md:text-3xl lg:text-4xl py-4 px-2
-                        after:bg-black after:h-0.5 after:block after:w-10 after:mt-2 after:mb-0 after:mx-auto after:content-['']
+                        <span id={`first-blog-title${index}`} className="post-title block text-lg font-bold md:text-3xl lg:text-4xl py-4 px-2
+                        after:bg-black after:h-0.5 after:block after:w-10 after:mt-4 after:mb-0 after:mx-auto after:content-['']
                         dark:after:bg-white
                         ">
                           {node.title}
-                        </h2>
+                        </span>
                         <span className="sr-only">on</span>
                         <span className="block text-base md:text-xl lg:text-2xl pb-4">
                         {dayjs(node.date)
@@ -76,11 +76,11 @@ export default function Home({ page, newest, listing }) {
                         layout="responsive"
                       />
                       <div className="self-center text-center">
-                        <h2 id={`blog-title${index}`} className="text-lg font-bold md:text-2xl py-4 px-2
-                        after:bg-black after:h-0.5 after:block after:w-10 after:mt-2 after:mb-0 after:mx-auto after:content-['']
+                        <span id={`blog-title${index}`} className="post-title block text-lg font-bold md:text-2xl py-4 px-2
+                        after:bg-black after:h-0.5 after:block after:w-10 after:mt-4 after:mb-0 after:mx-auto after:content-['']
                         dark:after:bg-white">
                           {node.title}
-                        </h2>
+                        </span>
                         <span className="sr-only">on</span>
                         <span className="block text-base md:text-xl pb-4">
                           {dayjs(node.date)
