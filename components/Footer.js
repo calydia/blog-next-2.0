@@ -3,10 +3,12 @@ import Image from 'next/image';
 const Footer = () => {
   return (
     <footer className="mt-12 p-[16px] lg:p-[48px] bg-lt-blue-light dark:bg-dk-purple">
-      <div className="footer-content">
+      <div className="md:flex md:justify-between">
         <a
           href="https://sanna.ninja"
-          className="flex align-center font-bold p-2 m-1 text-base lg:text-xl text-lt-blue-dark dark:text-white"
+          className="flex align-center font-bold p-2 m-1 border-y-4 border-transparent text-lt-blue-dark lg:text-xl text-lt-blue-darkest dark:text-dk-blue-light
+          hover:text-lt-purple hover:dark:text-dk-blue-light hover:border-y-4 hover:border-lt-purple dark:hover:border-dk-blue-light
+          focus:outline focus:outline-2 focus:outline-offset-8	focus:outline-black dark:focus:outline-white"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -33,7 +35,9 @@ const Footer = () => {
         <div className="links">
           <a
             href="https://twitter.com/schalallalaa"
-            className="flex align-center text-base lg:text-xl font-bold p-2 m-1 text-lt-blue-dark dark:text-white"
+            className="flex align-center text-lt-blue-dark lg:text-xl font-bold border-y-4 border-transparent p-2 m-1 text-lt-blue-darkest dark:text-dk-blue-light
+            hover:text-lt-purple hover:dark:text-dk-blue-light hover:border-y-4 hover:border-lt-purple dark:hover:border-dk-blue-light
+            focus:outline focus:outline-2 focus:outline-offset-8	focus:outline-black dark:focus:outline-white"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -10,7 +10,8 @@ module.exports = {
         'lt-gray': '#333333',
         'lt-blue-light': '#bbc9f7',
         'lt-blue-middle': '#dfe7fc',
-        'lt-blue-dark': '#54007b',
+        'lt-blue-dark': '#033573',
+        'lt-purple': '#54007b',
         'lt-perfume': '#e6cafc',
         'dk-blue-light': '#ade5f8',
         'dk-blue-darkest': '#010017',
@@ -22,6 +23,9 @@ module.exports = {
       fontFamily: {
         'title': 'Rock Salt, cursive',
         'sans': 'Average Sans, Arial, sans-serif',
+      },
+      outlineOffset: {
+        15: '15px',
       }
     },
   },

@@ -30,3 +30,7 @@ body.dark {
   display: none;
   visibility: hidden;
 }
+
+.post-link:hover h2 {
+    @apply text-lt-purple dark:text-dk-blue-light underline decoration-2 underline-offset-4
+}
