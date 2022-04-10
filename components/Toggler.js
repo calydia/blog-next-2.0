@@ -1,7 +1,7 @@
 import React from 'react'
 import { func, string } from 'prop-types';
-import Brightness2Icon from '@material-ui/icons/Brightness2';
-import WbSunnyIcon from '@material-ui/icons/WbSunny';
+import { HiSun } from "react-icons/hi";
+import { HiMoon } from "react-icons/hi";
 
 const Toggle = ({theme,  toggleTheme }) => {
     return (
@@ -11,7 +11,7 @@ const Toggle = ({theme,  toggleTheme }) => {
         aria-label={ (theme === "light") ? "Switch to dark mode" : "Switch to light mode"}
         title={ (theme === "light") ? "Switch to dark mode" : "Switch to light mode"}
       >
-        { (theme === "light") ? <Brightness2Icon aria-hidden="true" /> : <WbSunnyIcon aria-hidden="true" />}
+        { (theme === "light") ? <HiMoon className="h-8 w-8" aria-hidden="true" /> : <HiSun className="h-8 w-8" aria-hidden="true" />}
       </button>
     );
 };
