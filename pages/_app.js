@@ -25,6 +25,7 @@ function MyApp({ Component, pageProps }) {
           dark:from-dk-purple-header dark:via-dk-blue-header dark:to-dk-purple-header
         ">
           <Link href="#skip-target">
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a id="skip" className="sr-only focus:not-sr-only focus:absolute focus:top-8 focus:left-8 text-xl focus:p-4 text-black bg-lt-blue-light dark:bg-dk-purple dark:text-white dark:text-shadow-text
                 hover:text-lt-purple dark:hover:text-dk-blue-light hover:underline hover:decoration-2 hover:underline-offset-2
                 focus:outline focus:outline-2 focus:outline-black dark:focus:outline-white">

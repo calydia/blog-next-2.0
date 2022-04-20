@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['blog-drupal.sanna.ninja'],
+    domains: ['blog-drupal.sanna.ninja', 'drupal.ampere.corrupted.pw'],
   },
 }
 

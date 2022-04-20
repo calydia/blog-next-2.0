@@ -1,8 +1,9 @@
 import Image from 'next/image';
+import Script from 'next/script'
 
 const Footer = () => {
   return (
-    <footer className="mt-12 p-4-px lg:p-12-px bg-lt-blue-light dark:bg-dk-purple">
+    <footer className="mt-12 p-4-px lg:p-12-px border-t-8 border-solid border-blue-tory bg-lt-blue-light dark:bg-dk-purple">
       <div className="md:flex md:justify-between max-w-[1500px] mx-auto">
         <a
           href="https://sanna.ninja"
@@ -52,7 +53,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <script src="/skip-content.js" />
+      <Script src="/skip-content.js"></Script>
     </footer>
   );
 };

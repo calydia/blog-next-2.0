@@ -23,17 +23,18 @@ export default function Home({ page, newest, listing }) {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
       </Head>
-        <h1 id="skip-target" className="block px-4-px font-bold text-center my-8 lg:my-16 text-4xl md:text-6xl text-lt-gray dark:text-white">
-          { page.title }
-        </h1>
-        <div className="mx-4-px max-w-7xl xl:my-0 xl:mx-auto">
+      <h1 id="skip-target" className="block px-4-px font-bold text-center my-8 lg:my-16 text-4xl md:text-6xl text-lt-gray dark:text-white">
+        { page.title }
+      </h1>
+      <div className="mx-4-px max-w-7xl xl:my-0 xl:mx-auto">
+        {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 md:gap-8 lg:gap-12" role="list">
           {newest.items.map((node, index) => {
                 return (
                   <li key={`list-item${index}`} className="
                   p-2 md:col-span-2 lg:col-span-3 border-solid border-4 gradient-border-light bg-lt-blue-light text-lt-gray
                   dark:gradient-border-dark dark:bg-dk-purple dark:text-white">
-                    <a key={index} className="md:grid md:grid-cols-2 md:gap-8 post-link focus:outline focus:outline-4 focus:outline-offset-15	focus:outline-black dark:focus:outline-white" href={node.slug}>
+                    <a key={index} className="border-2 border-transparent md:grid md:grid-cols-2 md:gap-8 post-link focus:outline focus:outline-4 focus:outline-offset-15	focus:outline-black dark:focus:outline-white hover:border-lt-purple dark:hover:border-dk-blue-light" href={node.slug}>
                       <Image
                         src={node.listingImage}
                         alt=""
@@ -67,7 +68,7 @@ export default function Home({ page, newest, listing }) {
                   <li key={`list-item${index}`} className="grid items-stretch p-2 border-solid border-4 gradient-border-light bg-lt-blue-light text-lt-gray
                   dark:gradient-border-dark dark:bg-dk-purple dark:text-white
                   ">
-                    <a key={index} href={node.slug} className="post-link focus:outline focus:outline-4 focus:outline-offset-15	focus:outline-black dark:focus:outline-white">
+                    <a key={index} href={node.slug} className="post-link border-2 border-transparent focus:outline focus:outline-4 focus:outline-offset-15	focus:outline-black dark:focus:outline-white hover:border-lt-purple dark:hover:border-dk-blue-light">
                       <Image
                         src={node.listingImage}
                         alt=""
@@ -94,7 +95,7 @@ export default function Home({ page, newest, listing }) {
               }
             )
           }
-          </ul>
+        </ul>
       </div>
     </main>
   )
@@ -104,7 +105,7 @@ export async function getStaticProps() {
   const result = await client.query({
     query: gql`
       query GetBlogFrontPage {
-        page(id: 40) {
+        page(id: 1) {
           title
           metaDescription
         }

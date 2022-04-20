@@ -19,7 +19,8 @@ module.exports = {
         'dk-blue-header': '#18399A',
         'dk-blue-royal': '#4169e1',
         'dk-purple': '#18032b',
-        'dk-gray': '#cfcfcf'
+        'dk-gray': '#cfcfcf',
+        'blue-tory': '#18399a'
       },
       fontFamily: {
         'title': 'Rock Salt, cursive',

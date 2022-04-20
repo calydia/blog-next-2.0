@@ -50,6 +50,7 @@ export default function BlogPage({ post }) {
                   width={150}
                   height={150}
                   layout="fixed"
+                  className="rounded-full"
                 />
               </div>
               <span className="font-title text-xl">{ post.authorName }</span>
@@ -65,8 +66,8 @@ export default function BlogPage({ post }) {
 export async function getStaticPaths() {
   const result = await client.query({
     query: gql`
-    query GetTechBlogs {
-      articles(category: 1, limit: 100) {
+    query GetBlogPosts {
+      articles {
         items {
           slug
         }
@@ -75,12 +76,14 @@ export async function getStaticPaths() {
     `
   });
 
+  const paths = result.data.articles.items.map(({ slug }) => {
+    return {
+      params: { slug }
+    }
+  });
+
   return {
-    paths: result.data.articles.items.map(({ slug }) => {
-      return {
-        params: { slug }
-      }
-    }),
+    paths,
     fallback: false
   }
 };
@@ -89,7 +92,7 @@ export async function getStaticProps({ params }) {
   const { slug } = params;
   const result = await client.query({
     query: gql`
-      query GetTechBlog($slug: String!) {
+      query GetBlog($slug: String!) {
         articleSlug(slug: $slug) {
           title
           authorContent

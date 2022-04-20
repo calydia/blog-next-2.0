@@ -27,6 +27,7 @@ export default function BlogPage({ page, newest, listing }) {
           <div dangerouslySetInnerHTML={{ __html: page.content }} className="text-xl text-center mb-6 lg:mb-12 text-lt-gray dark:text-white"></div>
         </div>
         <div className="mx-4-px max-w-7xl xl:my-0 xl:mx-auto">
+          {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 md:gap-8 lg:gap-12" role="list">
             {newest.items.map((node, index) => {
                   return (
@@ -104,7 +105,7 @@ export async function getStaticProps() {
   const page = await client.query({
     query: gql`
       query GetBlogTechListingPage {
-        page(id: 41) {
+        page(id: 5) {
           title
           content
           metaDescription
@@ -116,7 +117,7 @@ export async function getStaticProps() {
   const newest = await client.query({
     query: gql`
       query GetNewestTechArticle {
-        articles(limit: 1, category: 5) {
+        articles(limit: 1, category: 25) {
           items {
             title
             slug
@@ -132,7 +133,7 @@ export async function getStaticProps() {
   const listing = await client.query({
     query: gql`
       query GetOtherTechArticles {
-        articles(limit: 100, category: 5, offset: 1) {
+        articles(limit: 100, category: 25, offset: 1) {
           items {
             title
             slug
