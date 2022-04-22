@@ -1,11 +1,10 @@
 import { gql } from '@apollo/client';
-import { client } from '../lib/apollo';
+import { client } from '../../lib/apollo';
 import dayjs from 'dayjs';
 import Image from 'next/image';
 import Head from 'next/head';
 
 export default function BlogPage({ post }) {
-
   return (
     <main>
       <Head>
@@ -21,8 +20,8 @@ export default function BlogPage({ post }) {
         <meta property="og:site_name" content="Blog - Sanna Mäkinen" />
         <meta property="og:image" content={post.mainImage} />
       </Head>
-      <div className="grid-cols-[1fr 280px]">
-        <div className="grid-cols-1 md:grid-cols-2">
+      <div className="grid custom-grid max-w-[1564px] mx-auto md:px-8-px">
+        <div className="grid col-span-2">
           <Image
             src={post.mainImage}
             alt=""
@@ -31,8 +30,8 @@ export default function BlogPage({ post }) {
             layout="intrinsic"
           />
         </div>
-        <div className="text-lt-gray dark:text-dk-gray py-2 px-4-px lg:py-6 lg:px-8">
-          <h1 id="skip-target" className="text-3xl lg:text-4xl">{ post.title }</h1>
+        <div className="text-lt-gray dark:text-dk-gray py-2 px-4-px max-w-xl mx-auto col-span-2 md:col-span-1 md:m-0 md:py-6 md:px-8 lg:max-w-4xl">
+          <h1 id="skip-target" className="text-3xl font-bold mt-4 mb-2 lg:text-4xl">{ post.title }</h1>
           <span className="text-base">
             {dayjs(post.date).format(`MMMM DD, YYYY`)}{' '}
             | {post.category}
@@ -40,9 +39,9 @@ export default function BlogPage({ post }) {
           <div dangerouslySetInnerHTML={{ __html: post.content }} className="text-xl"></div>
           <div dangerouslySetInnerHTML={{ __html: post.imageCredits }} className="text-base"></div>
         </div>
-        <aside className="w-[280px]">
+        <aside className="mt-36 col-span-2 md:col-span-1 md:w-[280px] md:mx-auto">
           <article>
-            <div className="p-[12px] lg:p-8 text-center text-lg">
+            <div className="p-[12px] md:p-8 text-center text-lg dark:bg-dk-purple dark:text-white">
               <div className="mb-6 -mt-28">
                 <Image
                   src={post.authorImage}
@@ -54,7 +53,7 @@ export default function BlogPage({ post }) {
                 />
               </div>
               <span className="font-title text-xl">{ post.authorName }</span>
-              <div dangerouslySetInnerHTML={{ __html: post.authorContent }} className="text-lg"></div>
+              <div dangerouslySetInnerHTML={{ __html: post.authorContent }} className="text-lg max-w-xl mx-auto"></div>
             </div>
           </article>
         </aside>
@@ -70,15 +69,16 @@ export async function getStaticPaths() {
       articles {
         items {
           slug
+          category
         }
       }
     }
     `
   });
 
-  const paths = result.data.articles.items.map(({ slug }) => {
+  const paths = result.data.articles.items.map(({ slug, category }) => {
     return {
-      params: { slug }
+      params: { slug: slug.substring(1), category: category.toLowerCase()  }
     }
   });
 
@@ -89,7 +89,7 @@ export async function getStaticPaths() {
 };
 
 export async function getStaticProps({ params }) {
-  const { slug } = params;
+  const slug = params.slug;
   const result = await client.query({
     query: gql`
       query GetBlog($slug: String!) {
@@ -117,7 +117,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      post: result.data.articleSlug
+      post: result.data.articleSlug,
     }
   };
 }

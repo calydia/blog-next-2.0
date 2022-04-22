@@ -31,19 +31,27 @@ body.dark {
   visibility: hidden;
 }
 
+p {
+  @apply my-5 leading-normal;
+}
 
 .post-link:hover .post-title {
   @apply text-lt-purple dark:text-dk-blue-light underline decoration-2 underline-offset-4
 }
 
 h2 {
-  @apply text-2xl	lg:text-3xl
+  @apply text-2xl	lg:text-3xl font-bold mt-8
 }
 
 h3 {
-  @apply text-xl	lg:text-2xl
+  @apply text-xl	lg:text-2xl font-bold mt-8
 }
 
 h3 {
-  @apply text-lg	lg:text-xl
+  @apply text-lg	lg:text-xl font-bold mt-8
 }
+
+.custom-grid {
+  grid-template-columns: 1fr 280px;
+}
+

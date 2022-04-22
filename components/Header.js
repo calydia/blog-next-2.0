@@ -4,7 +4,7 @@ import ActiveLink from './ActiveLink'
 const Header = () => {
 
   return (
-      <div className="text-center pt-2 pb-8 lg:py-8 clear-both lg:clear:none">
+      <div className="text-center pt-2 pb-4 lg:py-4 clear-both lg:clear:none">
         <Link className="home-main" href="/" passHref>
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a className="inline-block p-4-px lg:p-6-px border-y-4 border-transparent
@@ -15,7 +15,7 @@ const Header = () => {
           </a>
         </Link>
         <nav aria-label="Main">
-          <ul className="flex flex-wrap justify-center lg:mt-8 p-0 mb-0">
+          <ul className="flex flex-wrap justify-center lg:mt-4 p-0 mb-0">
             <li className="m-3.5">
               <ActiveLink activeClassName="underline decoration-2 underline-offset-4 text-lt-purple dark:text-dk-blue-light" href="/cats">
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

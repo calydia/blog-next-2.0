@@ -34,7 +34,7 @@ export default function BlogPage({ page, newest, listing }) {
                     <li key={`list-item${index}`} className="
                     p-2 md:col-span-2 lg:col-span-3 border-solid border-4 gradient-border-light bg-lt-blue-light text-lt-gray
                     dark:gradient-border-dark dark:bg-dk-purple dark:text-white">
-                      <a key={index} className="md:grid md:grid-cols-2 md:gap-8 post-link focus:outline focus:outline-4 focus:outline-offset-15	focus:outline-black dark:focus:outline-white" href={node.slug}>
+                      <a key={index} className="md:grid md:grid-cols-2 md:gap-8 post-link focus:outline focus:outline-4 focus:outline-offset-15	focus:outline-black dark:focus:outline-white" href={`/${node.category.toLowerCase()}${node.slug}`}>
                         <Image
                           src={node.listingImage}
                           alt=""
@@ -68,7 +68,7 @@ export default function BlogPage({ page, newest, listing }) {
                     <li key={`list-item${index}`} className="grid items-stretch p-2 border-solid border-4 gradient-border-light bg-lt-blue-light text-lt-gray
                     dark:gradient-border-dark dark:bg-dk-purple dark:text-white
                     ">
-                      <a key={index} href={node.slug} className="post-link focus:outline focus:outline-4 focus:outline-offset-15	focus:outline-black dark:focus:outline-white">
+                      <a key={index} href={`/${node.category.toLowerCase()}${node.slug}`} className="post-link focus:outline focus:outline-4 focus:outline-offset-15	focus:outline-black dark:focus:outline-white">
                         <Image
                           src={node.listingImage}
                           alt=""
