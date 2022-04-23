@@ -41,7 +41,7 @@ export default function BlogPage({ post }) {
         </div>
         <aside className="mt-36 col-span-2 md:col-span-1 md:w-[280px] md:mx-auto">
           <article>
-            <div className="p-[12px] md:p-8 text-center text-lg dark:bg-dk-purple dark:text-white">
+            <div className="p-[12px] md:p-8 text-center text-lg bg-lt-blue-light text-lt-gray dark:bg-dk-purple dark:text-white">
               <div className="mb-6 -mt-28">
                 <Image
                   src={post.authorImage}
