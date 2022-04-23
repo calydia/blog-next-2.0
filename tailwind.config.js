@@ -20,7 +20,12 @@ module.exports = {
         'dk-blue-royal': '#4169e1',
         'dk-purple': '#18032b',
         'dk-gray': '#cfcfcf',
-        'blue-tory': '#18399a'
+        'wheat': '#f5deb3',
+        'blue-tory': '#18399a',
+        'lt-code-bg': '#dfe7fc',
+        'lt-code-border': '#bbc9f7',
+        'dk-code-bg': '#070038',
+        'dk-code-border': '#18399a'
       },
       fontFamily: {
         'title': 'Rock Salt, cursive',

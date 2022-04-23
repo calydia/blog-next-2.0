@@ -47,7 +47,7 @@ h3 {
   @apply text-xl	lg:text-2xl font-bold mt-8
 }
 
-h3 {
+h4 {
   @apply text-lg	lg:text-xl font-bold mt-8
 }
 
@@ -55,3 +55,34 @@ h3 {
   grid-template-columns: 1fr 280px;
 }
 
+blockquote {
+  @apply italic my-8 pl-4 py-1 border-solid border-l-4 border-l-lt-purple dark:border-l-dk-blue-light
+}
+
+.box p:first-of-type,
+blockquote p:first-of-type {
+  @apply mt-0
+}
+
+.box p:last-of-type {
+  @apply mb-0
+}
+
+blockquote cite {
+  @apply text-base not-italic
+}
+
+code {
+  @apply text-base border-solid border py-0.5 px-1 mx-0.5 inline-block bg-lt-code-bg border-lt-code-border dark:bg-dk-code-bg dark:border-dk-code-border
+}
+
+.box a,
+.bodytext a {
+  @apply underline underline-offset-4 decoration-2 text-lt-blue-dark dark:text-dk-blue-light;
+  @apply hover:text-lt-purple hover:decoration-4 dark:hover:text-wheat;
+  @apply focus:text-lt-purple dark:focus:text-wheat focus:outline-2 focus:outline-offset-2 focus:no-underline focus:outline-lt-purple dark:focus:outline-wheat
+}
+
+.box ul {
+  @apply list-disc ml-5 leading-8
+}

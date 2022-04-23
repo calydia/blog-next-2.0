@@ -36,7 +36,13 @@ export default function BlogPage({ post }) {
             {dayjs(post.date).format(`MMMM DD, YYYY`)}{' '}
             | {post.category}
           </span>
-          <div dangerouslySetInnerHTML={{ __html: post.content }} className="text-xl"></div>
+          {post.boxContent ?
+            <div className="box grid gap-6 border-solid border-4 p-8-px my-8 bg-lt-code-bg border-lt-code-border dark:bg-dk-code-bg dark:border-dk-code-border">
+              <h2 className="m-0">{post.boxTitle}</h2>
+              <div dangerouslySetInnerHTML={{ __html: post.boxContent }}></div>
+            </div>
+          : null }
+          <div dangerouslySetInnerHTML={{ __html: post.content }} className="text-xl bodytext"></div>
           <div dangerouslySetInnerHTML={{ __html: post.imageCredits }} className="text-base"></div>
         </div>
         <aside className="mt-36 col-span-2 md:col-span-1 md:w-[280px] md:mx-auto">
@@ -84,7 +90,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false
+    fallback: 'blocking'
   }
 };
 
@@ -108,6 +114,8 @@ export async function getStaticProps({ params }) {
           mainImage
           listingImage
           metaDescription
+          boxTitle
+          boxContent
         }
       }
 
