@@ -151,6 +151,7 @@ export async function getStaticProps() {
       page: page.data.page,
       newest: newest.data.articles,
       listing: listing.data.articles
-    }
+    },
+    revalidate: 60
   };
 }

@@ -126,6 +126,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       post: result.data.articleSlug,
-    }
+    },
+    revalidate: 60
   };
 }
