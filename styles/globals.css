@@ -77,7 +77,8 @@ code {
 }
 
 .box a,
-.bodytext a {
+.bodytext a,
+.lead-content a {
   @apply underline underline-offset-4 decoration-2 text-lt-blue-dark dark:text-dk-blue-light;
   @apply hover:text-lt-purple hover:decoration-4 dark:hover:text-wheat;
   @apply focus:text-lt-purple dark:focus:text-wheat focus:outline-2 focus:outline-offset-2 focus:no-underline focus:outline-lt-purple dark:focus:outline-wheat

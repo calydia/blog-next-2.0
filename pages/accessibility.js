@@ -24,7 +24,7 @@ export default function BlogPage({ page, newest, listing }) {
         </Head>
         <div>
           <h1 id="skip-target" className="block px-4-px font-bold text-center mt-8 lg:mt-16 mb-4 lg:mb-8 text-4xl md:text-6xl text-lt-gray dark:text-white">{ page.title }</h1>
-          <div dangerouslySetInnerHTML={{ __html: page.content }} className="text-xl text-center mb-6 lg:mb-12 text-lt-gray dark:text-white"></div>
+          <div dangerouslySetInnerHTML={{ __html: page.content }} className="lead-content text-xl text-center mb-6 lg:mb-12 text-lt-gray dark:text-white"></div>
         </div>
         <div className="mx-4-px max-w-7xl xl:my-0 xl:mx-auto">
           {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
