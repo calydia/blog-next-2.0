@@ -32,7 +32,7 @@ body.dark {
 }
 
 p {
-  @apply my-5 leading-normal;
+  @apply my-6 leading-relaxed;
 }
 
 .post-link:hover .post-title {
