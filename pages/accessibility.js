@@ -1,6 +1,7 @@
 import { gql } from '@apollo/client';
 import { client } from '../lib/apollo';
 import Head from 'next/head';
+import Breadcrumb from '../components/Breadcrumb';
 import Image from 'next/image';
 import dayjs from 'dayjs';
 
@@ -23,10 +24,11 @@ export default function BlogPage({ page, newest, listing }) {
           <meta property="og:image:height" content="630" />
         </Head>
         <div>
+          <Breadcrumb current={page.title} />
           <h1 id="skip-target" className="block px-4-px font-bold text-center mt-8 lg:mt-16 mb-4 lg:mb-8 text-4xl md:text-6xl text-lt-gray dark:text-white">{ page.title }</h1>
-          <div dangerouslySetInnerHTML={{ __html: page.content }} className="lead-content text-xl text-center mb-6 lg:mb-12 text-lt-gray dark:text-white"></div>
+          <div dangerouslySetInnerHTML={{ __html: page.content }} className="mx-4-px lead-content text-xl text-center mb-6 lg:mb-12 text-lt-gray dark:text-white"></div>
         </div>
-        <div className="mx-4-px max-w-7xl xl:my-0 xl:mx-auto">
+        <div className="px-4-px max-w-[1564px] md:px-8-px xl:my-0 xl:mx-auto">
           {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 md:gap-8 lg:gap-12" role="list">
             {newest.items.map((node, index) => {

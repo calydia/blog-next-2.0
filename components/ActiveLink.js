@@ -1,4 +1,4 @@
-  
+
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
@@ -13,7 +13,7 @@ const ActiveLink = ({ children, activeClassName, ...props }) => {
   // pages/about.js will be matched via props.href
   // pages/[slug].js will be matched via props.as
   const className =
-    asPath === props.href || asPath === props.as
+    asPath === props.href || asPath === props.as || asPath.match(child.props.children.toLowerCase())
       ? `${childClassName} ${activeClassName}`.trim()
       : childClassName
 

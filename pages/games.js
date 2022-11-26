@@ -1,6 +1,7 @@
 import { gql } from '@apollo/client';
 import { client } from '../lib/apollo';
 import Head from 'next/head';
+import Breadcrumb from '../components/Breadcrumb';
 import Image from 'next/image';
 import dayjs from 'dayjs';
 
@@ -23,6 +24,7 @@ export default function BlogPage({ page, newest, listing }) {
           <meta property="og:image:height" content="630" />
         </Head>
         <div>
+          <Breadcrumb current={page.title} />
           <h1 id="skip-target" className="block px-4-px font-bold text-center mt-8 lg:mt-16 mb-4 lg:mb-8 text-4xl md:text-6xl text-lt-gray dark:text-white">{ page.title }</h1>
           <div dangerouslySetInnerHTML={{ __html: page.content }} className="text-xl text-center mb-6 lg:mb-12 text-lt-gray dark:text-white"></div>
         </div>

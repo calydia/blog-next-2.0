@@ -3,6 +3,7 @@ import { client } from '../../lib/apollo';
 import dayjs from 'dayjs';
 import Image from 'next/image';
 import Head from 'next/head';
+import Breadcrumb from '../../components/Breadcrumb';
 
 export default function BlogPage({ post }) {
   return (
@@ -30,7 +31,8 @@ export default function BlogPage({ post }) {
             layout="intrinsic"
           />
         </div>
-        <div className="text-lt-gray dark:text-dk-gray py-2 px-4-px max-w-xl mx-auto col-span-2 md:col-span-1 md:m-0 md:py-6 md:px-8 lg:max-w-4xl">
+        <Breadcrumb current={post.title} extraLevel="true" extraLevelName={post.category} extraLevelPath={`/${post.category.toLowerCase()}`} />
+        <div className="text-lt-gray dark:text-dk-gray py-2 px-4-px max-w-xl mx-auto col-span-2 md:col-span-1 md:m-0 md:py-6 md:px-8-px lg:max-w-4xl">
           <h1 id="skip-target" className="text-3xl font-bold mt-4 mb-2 lg:text-4xl">{ post.title }</h1>
           <span className="text-base">
             {dayjs(post.date).format(`MMMM DD, YYYY`)}{' '}
