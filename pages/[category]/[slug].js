@@ -57,7 +57,7 @@ export default function BlogPage({ post }) {
                   width={150}
                   height={150}
                   layout="fixed"
-                  className="rounded-full"
+                  className="rounded-full mx-auto"
                 />
               </div>
               <span className="font-title text-xl">{ post.authorName }</span>

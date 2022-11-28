@@ -87,3 +87,12 @@ code {
 .box ul {
   @apply list-disc ml-5 leading-8
 }
+
+.non-active-link {
+  @apply text-black dark:text-white
+}
+
+a[aria-current=true],
+.active-link {
+  @apply underline decoration-2 underline-offset-4 text-lt-purple dark:text-dk-blue-light
+}
