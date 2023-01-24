@@ -28,7 +28,6 @@ export default function BlogPage({ post }) {
             alt=""
             width={1500}
             height={600}
-            layout="intrinsic"
           />
         </div>
         <Breadcrumb current={post.title} extraLevel="true" extraLevelName={post.category} extraLevelPath={`/${post.category.toLowerCase()}`} />
@@ -56,7 +55,6 @@ export default function BlogPage({ post }) {
                   alt=""
                   width={150}
                   height={150}
-                  layout="fixed"
                   className="rounded-full mx-auto"
                 />
               </div>

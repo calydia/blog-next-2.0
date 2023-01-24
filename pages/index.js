@@ -40,8 +40,6 @@ export default function Home({ page, newest, listing }) {
                         alt=""
                         width={1025}
                         height={600}
-                        layout="responsive"
-                        objectFit="cover"
                       />
                       <div className="self-center text-center">
                         <span id={`first-blog-title${index}`} className="post-title block text-lg font-bold md:text-3xl lg:text-4xl py-4 px-2
@@ -74,7 +72,6 @@ export default function Home({ page, newest, listing }) {
                         alt=""
                         width={1025}
                         height={600}
-                        layout="responsive"
                       />
                       <div className="self-center text-center">
                         <span id={`blog-title${index}`} className="post-title block text-lg font-bold md:text-2xl py-4 px-2
