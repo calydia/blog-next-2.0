@@ -96,3 +96,24 @@ a[aria-current=true],
 .active-link {
   @apply underline decoration-2 underline-offset-4 text-lt-purple dark:text-dk-blue-light
 }
+
+blockquote ol {
+  @apply list-decimal
+}
+
+blockquote ul {
+  @apply list-disc
+}
+
+blockquote ol,
+blockquote ul {
+  margin-block-start: 0.25em;
+  margin-block-end: 0.25em;
+  margin-inline-start: 1.5em;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+
+blockquote p:last-of-type {
+  @apply mb-0
+}
