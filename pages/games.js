@@ -40,8 +40,8 @@ export default function BlogPage({ page, newest, listing }) {
                         <Image
                           src={node.listingImage}
                           alt=""
-                          width={1025}
-                          height={600}
+                          width={690}
+                          height={404}
                         />
                         <div className="self-center text-center">
                           <span id={`first-blog-title${index}`} className="post-title block text-lg font-bold md:text-3xl lg:text-4xl py-4 px-2
@@ -72,8 +72,8 @@ export default function BlogPage({ page, newest, listing }) {
                         <Image
                           src={node.listingImage}
                           alt=""
-                          width={1025}
-                          height={600}
+                          width={690}
+                          height={404}
                         />
                         <div className="self-center text-center">
                           <span id={`blog-title${index}`} className="post-title block text-lg font-bold md:text-2xl py-4 px-2

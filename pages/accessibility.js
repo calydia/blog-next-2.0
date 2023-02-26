@@ -36,12 +36,12 @@ export default function BlogPage({ page, newest, listing }) {
                     <li key={`list-item${index}`} className="
                     p-2 md:col-span-2 lg:col-span-3 border-solid border-4 gradient-border-light bg-lt-blue-light text-lt-gray
                     dark:gradient-border-dark dark:bg-dk-purple dark:text-white">
-                      <a key={index} className="block border-2 border-transparent md:grid md:grid-cols-2 md:gap-8 post-link focus:outline focus:outline-4 focus:outline-offset-15	focus:outline-black dark:focus:outline-white hover:border-lt-purple dark:hover:border-dk-blue-light" href={`/${node.category.toLowerCase()}${node.slug}`}>
+                      <a key={index} className="relative block border-2 border-transparent md:grid md:grid-cols-2 md:gap-8 post-link focus:outline focus:outline-4 focus:outline-offset-15	focus:outline-black dark:focus:outline-white hover:border-lt-purple dark:hover:border-dk-blue-light" href={`/${node.category.toLowerCase()}${node.slug}`}>
                         <Image
                           src={node.listingImage}
                           alt=""
-                          width={1025}
-                          height={600}
+                          width={690}
+                          height={404}
                         />
                         <div className="self-center text-center">
                           <span id={`first-blog-title${index}`} className="post-title block text-lg font-bold md:text-3xl lg:text-4xl py-4 px-2
@@ -72,8 +72,8 @@ export default function BlogPage({ page, newest, listing }) {
                         <Image
                           src={node.listingImage}
                           alt=""
-                          width={1025}
-                          height={600}
+                          width={690}
+                          height={404}
                         />
                         <div className="self-center text-center">
                           <span id={`blog-title${index}`} className="post-title block text-lg font-bold md:text-2xl py-4 px-2
