@@ -97,8 +97,12 @@ a[aria-current=true],
   @apply underline decoration-2 underline-offset-4 text-lt-purple dark:text-dk-blue-light
 }
 
-ol {
+.bodytext ol {
   @apply list-decimal list-inside;
+}
+
+.bodytext ul {
+  @apply list-disc list-inside;
 }
 
 
@@ -107,7 +111,7 @@ blockquote ol {
 }
 
 blockquote ul {
-  @apply list-disc
+  @apply list-disc list-outside;
 }
 
 blockquote ol,
