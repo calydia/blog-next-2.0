@@ -97,8 +97,13 @@ a[aria-current=true],
   @apply underline decoration-2 underline-offset-4 text-lt-purple dark:text-dk-blue-light
 }
 
+ol {
+  @apply list-decimal list-inside;
+}
+
+
 blockquote ol {
-  @apply list-decimal
+  @apply list-decimal list-outside;
 }
 
 blockquote ul {
@@ -117,3 +122,4 @@ blockquote ul {
 blockquote p:last-of-type {
   @apply mb-0
 }
+
