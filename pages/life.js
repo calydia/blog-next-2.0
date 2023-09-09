@@ -10,7 +10,7 @@ export default function BlogPage({ page, newest, listing }) {
       <main>
         <Head>
           <title>{ `${page.title} | Blog - Sanna Mäkinen` }</title>
-          <meta name="Description" content={page.metaDescription} />
+          <meta name="description" content={page.metaDescription} />
           <meta
             property="og:description"
             content={page.metaDescription}
