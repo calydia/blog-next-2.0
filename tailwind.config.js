@@ -30,7 +30,7 @@ module.exports = {
       },
       fontFamily: {
         'title': ['var(--font-rock-salt)', 'cursive'],
-        'sans': ['var(--font-inter)', 'Arial', 'sans-serif'],
+        'sans': ['var(--font-average-sans)', 'Arial', 'sans-serif'],
       },
       outlineOffset: {
         15: '15px',

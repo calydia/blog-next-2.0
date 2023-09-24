@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import  {UseDarkMode} from '../components/UseDarkMode'
-import Toggle from '../components/Toggler';
+import  {UseDarkMode} from './UseDarkMode';
+import Toggle from './Toggler';
 
 const Header = () => {
 

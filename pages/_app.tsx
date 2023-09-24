@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../styles/globals.css';
-import { Rock_Salt, Inter } from 'next/font/google'
+import { Rock_Salt, Average_Sans } from 'next/font/google'
 
 
 const rockSalt = Rock_Salt({
@@ -14,10 +14,10 @@ const rockSalt = Rock_Salt({
   variable: '--font-rock-salt'
 })
 
-const inter = Inter({
+const averageSans = Average_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '600', '700'],
-  variable: '--font-inter'
+  weight: ['400'],
+  variable: '--font-average-sans'
 })
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ApolloProvider client={client}>
-      <div className={`${rockSalt.className} ${inter.className} ${rockSalt.variable} ${inter.variable}`}>
+      <div className={`${rockSalt.className} ${averageSans.className} ${rockSalt.variable} ${averageSans.variable}`}>
         <Header />
         <script
             dangerouslySetInnerHTML={{
